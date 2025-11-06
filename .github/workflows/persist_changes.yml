@@ -36,7 +36,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         token: ${{ secrets.envPAT }}
-        repository: 'Testing-Forecast-Actions/hub-tools'
+        repository: 'Testing-Forecast-Actions/Testing-Tools'
         ref: 'main'
         path: './tools/'
 
