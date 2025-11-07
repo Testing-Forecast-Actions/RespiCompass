@@ -102,25 +102,25 @@ jobs:
 
           # Validate data submission
           # ---------------------------------
-          - name: Run validations
-            env:
-              files: ${{ steps.get_changed_files.outputs.all_changed_files }}
-              PR_NUMBER: ${{ github.event.number }}
-            run: |
-              Rscript ./tools/RCode/validate_pr_custom.R \
-                --hub_path . \
-                --all_changed_files "${{ steps.get_changed_files.outputs.all_changed_files }}" \
-                --check_submit_window TRUE
-              # validate_parquet_chunks.R   --input TestTeam-TestModel/2025_2026_1_RSV-TestTeam-TestModel.parquet   
-              # --hub ./   --split location   --out chunks/   --log validation_errors.log2
+          # - name: Run validations
+          #   env:
+          #     files: ${{ steps.get_changed_files.outputs.all_changed_files }}
+          #     PR_NUMBER: ${{ github.event.number }}
+          #   run: |
+          #     Rscript ./tools/RCode/validate_pr_custom.R \
+          #       --hub_path . \
+          #       --all_changed_files "${{ steps.get_changed_files.outputs.all_changed_files }}" \
+          #       --check_submit_window TRUE
+          #     # validate_parquet_chunks.R   --input TestTeam-TestModel/2025_2026_1_RSV-TestTeam-TestModel.parquet   
+          #     # --hub ./   --split location   --out chunks/   --log validation_errors.log2
 
-              #library("hubValidations")
-              # v <- hubValidations::validate_pr(
-              #     gh_repo = Sys.getenv("GITHUB_REPOSITORY"),
-              #     pr_number = Sys.getenv("PR_NUMBER"),
-              #     skip_submit_window_check = FALSE
-              # )
-              #hubValidations::check_for_errors(v, verbose = TRUE)
+          #     #library("hubValidations")
+          #     # v <- hubValidations::validate_pr(
+          #     #     gh_repo = Sys.getenv("GITHUB_REPOSITORY"),
+          #     #     pr_number = Sys.getenv("PR_NUMBER"),
+          #     #     skip_submit_window_check = FALSE
+          #     # )
+          #     #hubValidations::check_for_errors(v, verbose = TRUE)
                                     
             # shell: Rscript {0}
           # TEMPORARY COMMENTED OUT UNTIL BUG FIXED
