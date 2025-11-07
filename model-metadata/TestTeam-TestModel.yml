@@ -9,3 +9,4 @@ model_contributors:
 team_model_designation: primary
 methods: A stochastic, age structured compartmental model calibrated via ABC-SMC techniques.
 license: CC-BY-4.0
+data_inputs: ECDC ERVISS
